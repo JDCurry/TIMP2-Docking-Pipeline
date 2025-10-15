@@ -11,43 +11,69 @@ This repository contains all custom Python scripts, documentation, and supportin
 > A Computational Approach to Enhancing Neuroplasticity.*  
 > (Preprint forthcoming on OSF)
 
-TIMP2 (Tissue Inhibitor of Metalloproteinase-2) regulates hippocampal plasticity and cognitive function through MMP-independent neuronal signaling. Building on Ferreira *et al.* (2023, *eNeuro*):contentReference[oaicite:0]{index=0}, this work identifies a cryptic, chemically promiscuous allosteric pocket in TIMP2 and demonstrates that it accommodates both halogenated and non-halogenated scaffolds with high CNS drug-likeness.
+TIMP2 (Tissue Inhibitor of Metalloproteinase-2) regulates hippocampal plasticity and cognitive function through MMP-independent neuronal signaling.  
+Building on Ferreira *et al.* (2023, *eNeuro*) and integrin-mechanistic studies by Pérez-Martínez & Jaworski (2005) and Herrera-Molina *et al.* (2012), this project identifies a cryptic, chemically promiscuous allosteric pocket in TIMP2 and demonstrates that it accommodates both halogenated and non-halogenated scaffolds with high CNS drug-likeness.
 
 ---
 
 ## Biological Context
-TIMP2 enhances neuroplasticity by stabilizing neuronal ECM dynamics and engaging α3β1 integrin–Rap1–ERK pathways independently of metalloproteinase inhibition. Small-molecule allosteric modulation offers a potential therapeutic route to replicate these effects with greater bioavailability and blood-brain barrier penetration.
 
-Reference:  
-Ferreira T.A. *et al.* (2023). *Neuronal TIMP2 Regulates Hippocampal Neurogenesis and Synaptic Plasticity.* *eNeuro*, 10(4): ENEURO.0031-23.2023.
+TIMP2 modulates neural plasticity through dual integrin-dependent signaling systems that together maintain a dynamic balance between neurite growth and retraction.
+
+- **Pérez-Martínez & Jaworski (2005)** showed that TIMP2 activates neuronal **α3β1 integrin**, stimulating the **cAMP/Rap1/ERK** cascade and promoting neurite outgrowth and differentiation — a growth-promoting, pro-plasticity pathway independent of metalloproteinase inhibition.  
+- **Herrera-Molina *et al.* (2012)** revealed that astrocytic **αVβ3 integrin** binds neuronal **Thy-1**, triggering **Src inactivation and neurite retraction**, defining an opposing, retractive mechanism relevant to axonal remodeling and glial responses.  
+- **Ferreira *et al.* (2023)** confirmed *in vivo* that neuronal TIMP2 is essential for hippocampal neurogenesis and memory formation, directly linking these integrin pathways to cognitive function.
+
+Together, these findings describe a **bidirectional integrin–matrix feedback loop**:  
+TIMP2–α3β1 drives neuronal growth and synaptic plasticity, whereas Thy-1–αVβ3 constrains or reverses it during glial activation.  
+The cryptic allosteric site discovered in this project may stabilize TIMP2’s pro-plasticity conformation and tip this balance toward regeneration.
 
 ---
 
-## ⚙️ Pipeline Summary
+## Proposed Mechanism of Action
 
-### Primary Workflow
+![Proposed mechanism of action](manuscript/timp2_mechanism_no_bg.svg)
+
+**Figure 1. ** *Proposed mechanism of action for TIMP2 allosteric modulation.*  
+Binding of a small molecule to the cryptic N-terminal pocket (Val6, Leu100, Phe103) induces a conformational shift enhancing TIMP2’s affinity for α3β1 integrins.  
+This promotes downstream activation of the **cAMP/Rap1/ERK** pathway, leading to increased neurite outgrowth, neurogenesis, and synaptic plasticity.
+
+*References:*  
+- Pérez-Martínez L. & Jaworski D.M. (2005). *TIMP-2 promotes neuronal differentiation and neurite outgrowth through α3β1 integrin and ERK signaling.* *J Neurosci.* 25 (26): 7997–8007.  
+- Herrera-Molina R. *et al.* (2012). *The integrin αVβ3 interacts with Thy-1 and regulates neurite outgrowth in hippocampal neurons.* *PLoS ONE 7* (4): e34295.  
+- Ferreira T.A. *et al.* (2023). *Neuronal TIMP2 regulates hippocampal neurogenesis and synaptic plasticity.* *eNeuro 10* (4): ENEURO.0031-23.2023.
+
+---
+
+## Pipeline Summary
+
 | Step | Script | Function |
 |------|---------|-----------|
-| 1️⃣ | `dock_adaptive_fixed.py` | Adaptive AutoDock Vina screening with CPU load benchmarking. |
-| 2️⃣ | `rebuild_hits.py` | Parses `.pdbqt` files to reconstruct SMILES and docking scores. |
-| 3️⃣ | `timp2_triage.py` | Triage CNS/peripheral hits; filters based on energy, site, and diversity. |
-| 4️⃣ | `timp2_analysis.py` | Integrates ADMET data, calculates CNS MPO, clusters scaffolds. |
-| 5️⃣ | `add_zinc_ids_prioritized.py` | Re-maps prioritized compounds to their original ZINC IDs. |
-| 6️⃣ | `tier_1_filter.py` | Applies strict ADMET-AI toxicity flags (Tier 1 = clean). |
+| 1️⃣ | `dock_adaptive_fixed.py` | Adaptive AutoDock Vina screening with CPU benchmarking. |
+| 2️⃣ | `rebuild_hits.py` | Parses `.pdbqt` files to rebuild SMILES and docking scores. |
+| 3️⃣ | `timp2_triage.py` | Triage CNS/peripheral hits; energy and diversity filters. |
+| 4️⃣ | `timp2_analysis.py` | Integrates ADMET data, CNS MPO, and scaffold clustering. |
+| 5️⃣ | `add_zinc_ids_prioritized.py` | Re-maps prioritized compounds to ZINC IDs. |
+| 6️⃣ | `tier_1_filter.py` | Strict ADMET-AI toxicity tiers (Tier 1 = clean). |
 | 7️⃣ | `diversity_selection_script.py` | Balances chemical diversity across chunks. |
-| 8️⃣ | `singleton.py` | Isolates unique scaffolds (singleton vs non-singleton). |
-| 9️⃣ | `scaffold_extraction_rdkit.py` | Generates Murcko scaffold images for visual QC. |
+| 8️⃣ | `singleton.py` | Identifies unique (singleton) scaffolds. |
+| 9️⃣ | `scaffold_extraction_rdkit.py` | Generates Murcko scaffold images. |
 
 ---
 
 ## Computational Setup
 
-**Hardware Used:**
-- Dual Xeon workstation (24 cores, 3.2 GHz, 128 GB RAM)
-- NVMe SSD, Windows 10 64-bit
-- AutoDock Vina 1.2.5, RDKit 2023.03, OpenBabel 3.1.1, ADMET-AI v2.1
+**Hardware:** Dual Xeon (24 cores, 128 GB RAM), NVMe SSD, Ubuntu 22.04  
+**Software:** AutoDock Vina 1.2.5, RDKit 2023.03, OpenBabel 3.1.1, ADMET-AI v2.1  
 
-**Environment Setup:**
+Create environment:
 ```bash
 conda env create -f environment.yml
 conda activate timp2-docking
+
+Example run:
+
+python scripts/dock_adaptive_fixed.py data/strict_0001.smi
+python scripts/rebuild_hits.py
+python scripts/timp2_triage.py --hits-csv work_strict/strict_0001_hits.csv --out triage_out/strict_0001
+python scripts/timp2_analysis.py triage_out/strict_0001/cns_hits.csv -o analysis_out/
