@@ -32,7 +32,7 @@ The cryptic allosteric site discovered in this project may stabilize TIMP2’s p
 
 ## Proposed Mechanism of Action
 
-![Proposed mechanism of action](manuscript/timp2_mechanism_no_bg.svg)
+![Proposed mechanism of action](manuscript/timp2_mechanism_white_bg.png)
 
 **Figure 1. ** *Proposed mechanism of action for TIMP2 allosteric modulation.*  
 Binding of a small molecule to the cryptic N-terminal pocket (Val6, Leu100, Phe103) induces a conformational shift enhancing TIMP2’s affinity for α3β1 integrins.  
