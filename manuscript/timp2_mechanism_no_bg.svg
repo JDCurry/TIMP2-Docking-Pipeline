@@ -1,0 +1,79 @@
+<svg viewBox="0 0 800 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="400" y="40" font-size="28" font-weight="bold" text-anchor="middle" font-family="Arial, sans-serif">
+    PROPOSED MECHANISM OF ACTION
+  </text>
+  
+  <!-- Extracellular label -->
+  <text x="70" y="95" font-size="14" font-weight="600" fill="#2c5f7d" font-family="Arial, sans-serif">Extracellular Space</text>
+  
+  <!-- TIMP2 Protein -->
+  <ellipse cx="250" cy="160" rx="80" ry="50" fill="#7eb3d6" stroke="#2c5f7d" stroke-width="3"/>
+  <text x="250" y="168" font-size="22" font-weight="bold" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif">TIMP2</text>
+  
+  <!-- Small molecule binding -->
+  <ellipse cx="380" cy="150" rx="25" ry="20" fill="#a8d5a1" stroke="#4a7c59" stroke-width="2"/>
+  <line x1="405" y1="150" x2="465" y2="150" stroke="#4a7c59" stroke-width="2" marker-end="url(#arrowhead-green)"/>
+  <text x="480" y="135" font-size="15" font-weight="600" font-family="Arial, sans-serif">Small molecule</text>
+  <text x="480" y="155" font-size="15" font-weight="600" font-family="Arial, sans-serif">binds allosteric</text>
+  <text x="480" y="175" font-size="15" font-weight="600" font-family="Arial, sans-serif">site</text>
+  
+  <!-- Arrow to conformational change -->
+  <path d="M 250 210 L 250 270" stroke="#333" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="270" y="245" font-size="14" font-style="italic" font-family="Arial, sans-serif">Conformational</text>
+  <text x="270" y="265" font-size="14" font-style="italic" font-family="Arial, sans-serif">change</text>
+  
+  <!-- Integrin binding box -->
+  <rect x="120" y="290" width="260" height="60" fill="#b8e6d5" stroke="#3d9970" stroke-width="3" rx="8"/>
+  <text x="250" y="318" font-size="17" font-weight="600" text-anchor="middle" font-family="Arial, sans-serif">Enhanced α3β1 integrin</text>
+  <text x="250" y="340" font-size="17" font-weight="600" text-anchor="middle" font-family="Arial, sans-serif">binding affinity</text>
+  
+  <!-- Membrane line -->
+  <line x1="50" y1="390" x2="750" y2="390" stroke="#666" stroke-width="4" stroke-dasharray="10,5"/>
+  <text x="70" y="415" font-size="14" font-weight="600" fill="#666" font-family="Arial, sans-serif">Cell Membrane</text>
+  
+  <!-- Intracellular label -->
+  <text x="70" y="445" font-size="14" font-weight="600" fill="#b8860b" font-family="Arial, sans-serif">Intracellular Space</text>
+  
+  <!-- Arrow to pathway -->
+  <path d="M 250 350 L 250 465" stroke="#333" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Signaling pathway box -->
+  <rect x="100" y="470" width="300" height="70" fill="#d4edda" stroke="#5a9e6f" stroke-width="3" rx="8"/>
+  <text x="250" y="498" font-size="18" font-weight="600" text-anchor="middle" font-family="Arial, sans-serif">cAMP/Rap1/ERK pathway</text>
+  <text x="250" y="525" font-size="18" font-weight="600" text-anchor="middle" font-family="Arial, sans-serif">activation</text>
+  
+  <!-- Arrow to outcomes -->
+  <path d="M 250 540 L 250 590" stroke="#333" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Cellular outcomes box -->
+  <rect x="80" y="595" width="340" height="150" fill="#fff3cd" stroke="#d39e00" stroke-width="3" rx="8"/>
+  <text x="100" y="625" font-size="16" font-weight="600" font-family="Arial, sans-serif">• Neuronal differentiation</text>
+  <text x="100" y="655" font-size="16" font-weight="600" font-family="Arial, sans-serif">• Neurite outgrowth</text>
+  <text x="100" y="685" font-size="16" font-weight="600" font-family="Arial, sans-serif">• Neurogenesis</text>
+  <text x="100" y="715" font-size="16" font-weight="600" font-family="Arial, sans-serif">• Synaptic plasticity ↑</text>
+  
+  <!-- Arrow to final outcome -->
+  <path d="M 250 745 L 250 790" stroke="#333" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Final outcome -->
+  <rect x="100" y="795" width="300" height="55" fill="#e8d4f0" stroke="#8b4789" stroke-width="3" rx="8"/>
+  <text x="250" y="830" font-size="20" font-weight="bold" text-anchor="middle" font-family="Arial, sans-serif">NEUROADAPTIVE PLASTICITY</text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#333"/>
+    </marker>
+    <marker id="arrowhead-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#4a7c59"/>
+    </marker>
+  </defs>
+  
+  <!-- Side annotation for cryptic site -->
+  <rect x="500" y="290" width="240" height="90" fill="#fef5e7" stroke="#f39c12" stroke-width="2" rx="8" opacity="0.9"/>
+  <text x="620" y="315" font-size="13" font-weight="600" text-anchor="middle" font-family="Arial, sans-serif" fill="#856404">Novel cryptic allosteric site:</text>
+  <text x="620" y="335" font-size="12" text-anchor="middle" font-family="Arial, sans-serif" fill="#856404">Val6, Leu100, Phe103</text>
+  <text x="620" y="355" font-size="12" text-anchor="middle" font-family="Arial, sans-serif" fill="#856404">(N-terminal domain)</text>
+  <text x="620" y="372" font-size="11" font-style="italic" text-anchor="middle" font-family="Arial, sans-serif" fill="#856404">Identified via virtual screening</text>
+</svg>
