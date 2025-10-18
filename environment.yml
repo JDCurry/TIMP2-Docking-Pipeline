@@ -1,0 +1,15 @@
+name: timp2-docking
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.9
+  - rdkit
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - openbabel
+  - vina
+  - psutil
+  - chembl_structure_pipeline
+  - admet-ai
