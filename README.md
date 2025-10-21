@@ -63,7 +63,7 @@ This promotes downstream activation of the **cAMP/Rap1/ERK** pathway, leading to
 
 ## Computational Setup
 
-**Hardware:** Dual Xeon (24 cores, 128 GB RAM), NVMe SSD, Ubuntu 22.04  
+**Hardware:** Dual Xeon (24 cores, 128 GB RAM), NVMe SSD, Windows 10 Pro  
 **Software:** AutoDock Vina 1.2.5, RDKit 2023.03, OpenBabel 3.1.1, ADMET-AI v2.1  
 
 Create environment:
