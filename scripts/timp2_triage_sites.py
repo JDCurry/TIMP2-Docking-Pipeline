@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """
-TIMP2 Site-Aware Triage (v2)
+TIMP2 Site-Aware Triage (v2.1)
 
 Purpose
 -------
-Preserve and analyze ligand docking results from multiple binding sites (e.g., Site A, Site B)
+Preserve and analyze ligand docking results from multiple binding sites (e.g., Site 1, Site 2)
 without collapsing entries by SMILES or clustering away duplicates.
 
 Key Features
 -------------
 1. Reads scores + chunk SMILES (or direct hits CSV) just like timp2_triage.py.
-2. Automatically detects or assigns 'site' labels (from ligand IDs or provided flag).
+2. Automatically detects or assigns 'site' labels (supports both 'site1'/'site2' and '_A'/'_B').
 3. Computes RDKit descriptors, CNS MPO, and PAINS/Brenk filters.
 4. Assigns each molecule to CNS/Peripheral lanes.
 5. **Preserves duplicates** — no collapsing by SMILES or cluster diversity filtering.
@@ -19,18 +19,15 @@ Key Features
 Usage Example
 -------------
 python timp2_triage_sites.py \
-  --scores-csv strict_0109_scores.csv \
-  --chunks-dir chunks_strict \
-  --pattern strict_*.smi \
-  --top 5000 \
+  --hits-csv strict_0109_hits.csv \
   --out triage_sites_out
 
 Outputs
 -------
 out/
   - all_sites_full.csv   (complete dataset, all sites)
-  - siteA_hits.csv       (subset for Site A)
-  - siteB_hits.csv       (subset for Site B)
+  - site1_hits.csv       (subset for Site 1)
+  - site2_hits.csv       (subset for Site 2)
   - summary.md
 """
 
@@ -47,11 +44,17 @@ from rdkit.Chem import FilterCatalog
 # ------------------------------------------------------
 
 def extract_site_from_id(ligand_id: str) -> str:
-    if isinstance(ligand_id, str):
-        if ligand_id.endswith(('A', 'B')) and '_' in ligand_id:
-            return ligand_id.split('_')[-1]
-        if ligand_id.lower().endswith('a'): return 'A'
-        if ligand_id.lower().endswith('b'): return 'B'
+    if not isinstance(ligand_id, str):
+        return 'UNK'
+    lid = ligand_id.lower()
+    if 'site1' in lid or 'site_1' in lid:
+        return '1'
+    if 'site2' in lid or 'site_2' in lid:
+        return '2'
+    if lid.endswith('a'):
+        return 'A'
+    if lid.endswith('b'):
+        return 'B'
     return 'UNK'
 
 def build_name_to_smiles(chunks_dir: Path, pattern: str):
@@ -97,7 +100,6 @@ def pains_brenk_flags(m: Chem.Mol) -> str:
     return '; '.join(alerts)
 
 def cns_mpo(mw, tpsa, hbd, clogp):
-    # Simplified Wager CNS MPO calculation
     s = 0
     s += 1 - min(max((mw - 360) / 140, 0), 1)
     s += 1 - min(max((tpsa - 60) / 60, 0), 1)
@@ -133,13 +135,11 @@ def triage_sites(df_hits: pd.DataFrame, outdir: Path):
     df = pd.DataFrame(records)
     outdir.mkdir(parents=True, exist_ok=True)
     df.to_csv(outdir / 'all_sites_full.csv', index=False)
-    
-    # Separate outputs per site
+
     for site in sorted(df['site'].unique()):
         df_site = df[df['site'] == site]
         df_site.to_csv(outdir / f'site{site}_hits.csv', index=False)
 
-    # Quick summary
     with open(outdir / 'summary.md', 'w') as f:
         f.write('# TIMP2 Site-Aware Triage Summary\n\n')
         f.write(f'Total entries: {len(df)}\n\n')
@@ -172,8 +172,12 @@ def main():
         rows = []
         with open(args.scores_csv, 'r') as f:
             header = [h.strip() for h in f.readline().split(',')]
-            i_lig = header.index('ligand')
-            i_score = header.index('best_kcal_mol')
+            # Flexible header mapping: supports 'ligand' or 'id', 'best_kcal_mol' or 'docking_score'
+            colmap = {h.lower(): i for i, h in enumerate(header)}
+            i_lig = colmap.get('ligand', colmap.get('id'))
+            i_score = colmap.get('best_kcal_mol', colmap.get('docking_score'))
+            if i_lig is None or i_score is None:
+                raise ValueError('Could not find ligand/id or score column in CSV header')
             for line in f:
                 parts = line.strip().split(',')
                 if len(parts) <= max(i_lig, i_score): continue
@@ -187,7 +191,6 @@ def main():
     else:
         raise SystemExit('Provide either --hits-csv or --scores-csv + --chunks-dir')
 
-    # Ensure site column exists
     if 'site' not in df.columns:
         df['site'] = df['id'].apply(extract_site_from_id)
 
