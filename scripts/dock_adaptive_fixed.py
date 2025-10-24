@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Modified dock_chunk_adaptive.py that preserves original molecule names from SMI files.
 Key changes:
 1. PDBQT files are named using the original molecule ID (e.g., ZINC001176034359_1.pdbqt)
 2. Summary CSV uses original names, making it possible to map back to SMILES
