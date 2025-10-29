@@ -1,0 +1,49 @@
+{
+  "HARD_STOPS": {
+    "mutagenicity": 0.7,
+    "carcinogenicity": 0.7
+  },
+  "WEIGHTS": {
+    "hepatotoxicity": 3.0,
+    "cardiotoxicity": 3.0,
+    "nephrotoxicity": 2.0,
+    "immunotoxicity": 2.0,
+    "clinical_toxicity": 3.0,
+    "neurotoxicity": 1.5,
+    "respiratory_toxicity": 0.0,
+    "bbb_barrier": 0.0,
+    "ecotoxicity": 0.0,
+    "sr_are": 0.5,
+    "sr_hse": 0.5,
+    "sr_mmp": 1.0,
+    "sr_p53": 0.5,
+    "sr_atad5": 0.5,
+    "pxr": 1.5
+  },
+  "LD50_CLASS_PENALTY": {
+    "1": [
+      10.0,
+      "auto_exclude"
+    ],
+    "2": [
+      10.0,
+      "auto_exclude"
+    ],
+    "3": [
+      3.0,
+      "high"
+    ],
+    "4": [
+      1.0,
+      "moderate"
+    ],
+    "5": [
+      0.5,
+      "low"
+    ],
+    "6": [
+      0.0,
+      "none"
+    ]
+  }
+}
