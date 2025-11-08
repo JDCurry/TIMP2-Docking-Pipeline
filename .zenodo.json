@@ -1,0 +1,30 @@
+{
+  "title": "TIMP2 Docking and ADMET Pipeline",
+  "upload_type": "software",
+  "description": "A computational pipeline for identifying CNS-penetrant small molecule modulators of TIMP2 through large-scale virtual screening, ADMET profiling, and orthogonal toxicity validation. Includes Python scripts, ligand libraries, docking results, and filtering tools.",
+  "creators": [
+    {
+      "name": "Curry, Joshua D.",
+      "affiliation": "Pierce College Fort Steilacoom",
+      "orcid": "https://orcid.org/0009-0006-5096-4424"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "TIMP2",
+    "Neuroplasticity",
+    "Virtual Screening",
+    "AutoDock Vina",
+    "ADMET",
+    "ProTox-III",
+    "Python",
+    "CNS Drug Discovery"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/JDCurry/TIMP2-Docking-Pipeline",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}
