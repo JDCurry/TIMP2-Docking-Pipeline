@@ -2,7 +2,7 @@
 *A computational framework for identifying novel allosteric modulators of TIMP2 and exploring mechanisms of neuroplasticity.*
 
 ---
-
+[![DOI](https://zenodo.org/badge/1024692624.svg)](https://doi.org/10.5281/zenodo.17555741)
 ## Overview
 This repository contains all custom Python scripts, documentation, and supporting materials for the study:
 
