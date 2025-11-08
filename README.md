@@ -9,7 +9,7 @@ This repository contains all custom Python scripts, documentation, and supportin
 > **Curry, J.D. (2025).**  
 > *Large-Scale Virtual Screening Identifies Novel Allosteric Modulators of TIMP2:  
 > A Computational Approach to Enhancing Neuroplasticity.*  
-> (Preprint forthcoming on OSF)
+> (Preprint forthcoming on ChemRxiv)
 
 TIMP2 (Tissue Inhibitor of Metalloproteinase-2) regulates hippocampal plasticity and cognitive function through MMP-independent neuronal signaling.  
 Building on Ferreira *et al.* (2023, *eNeuro*) and integrin-mechanistic studies by Pérez-Martínez & Jaworski (2005) and Herrera-Molina *et al.* (2012), this project identifies a cryptic, chemically promiscuous allosteric pocket in TIMP2 and demonstrates that it accommodates both halogenated and non-halogenated scaffolds with high CNS drug-likeness.
@@ -32,7 +32,7 @@ The cryptic allosteric site discovered in this project may stabilize TIMP2’s p
 
 ## Proposed Mechanism of Action
 
-![Proposed mechanism of action](manuscript/timp2_mechanism_white_bg.png)
+![Proposed mechanism of action](manuscript/supplemental/timp2_mechanism_white_bg.png)
 
 **Figure 1. ** *Proposed mechanism of action for TIMP2 allosteric modulation.*  
 Binding of a small molecule to the cryptic N-terminal pocket (Val6, Leu100, Phe103) induces a conformational shift enhancing TIMP2’s affinity for α3β1 integrins.  
