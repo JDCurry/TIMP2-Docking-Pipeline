@@ -1,1 +1,16 @@
-For virtual screening grid generation, receptor boxes were centered at (x = 18.6, y = 7.4, z = 23.5 Å) for Site 1 (cryptic pocket) and (x = −9.8, y = 10.3, z = 19.9 Å) for Site 2 (alternative MMP interface), using TIMP2 (PDB 1BR9, chain A, 2.1 Å resolution) as the reference structure. Each grid measured 24 × 24 × 24 Å with 0.375 Å spacing to ensure adequate coverage of local side-chain flexibility and solvent-accessible volume.
+TIMP2 (PDB 1BR9, chain A)
+Docking grid parameters for AutoDock Vina 1.1.2
+
+Site 1 (Cryptic/Allosteric Pocket)
+Center: x = 18.6, y = 7.4, z = 23.5 Å
+Grid size: 24 × 24 × 24 Å
+Spacing: 0.375 Å
+
+Site 2 (Canonical/Alternative Pocket)
+Center: x = −9.8, y = 10.3, z = 19.9 Å
+Grid size: 24 × 24 × 24 Å
+Spacing: 0.375 Å
+
+Notes:
+Coordinates derived from PDB 1BR9 following Schrödinger SiteMap pocket identification.
+All receptor files prepared in PDBQT format via OpenBabel.
