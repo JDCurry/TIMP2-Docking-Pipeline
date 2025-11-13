@@ -2,14 +2,10 @@
 *A computational framework for identifying novel allosteric modulators of TIMP2 and exploring mechanisms of neuroplasticity.*
 
 ---
-[![DOI](https://zenodo.org/badge/1024692624.svg)](https://doi.org/10.5281/zenodo.17555741)
+[![Preprint](https://img.shields.io/badge/ChemRxiv-Preprint-blueviolet)](https://doi.org/10.26434/chemrxiv-2025-rq1vl) [![DOI](https://zenodo.org/badge/1024692624.svg)](https://doi.org/10.5281/zenodo.17555741) 
 ## Overview
-This repository contains all custom Python scripts, documentation, and supporting materials for the study:
 
-> **Curry, J.D. (2025).**  
-> *Large-Scale Virtual Screening Identifies Novel Allosteric Modulators of TIMP2:  
-> A Computational Approach to Enhancing Neuroplasticity.*  
-> (Preprint forthcoming on ChemRxiv)
+Please cite this work if you use or adapt the pipeline.
 
 TIMP2 (Tissue Inhibitor of Metalloproteinase-2) regulates hippocampal plasticity and cognitive function through MMP-independent neuronal signaling.  
 Building on Ferreira *et al.* (2023, *eNeuro*) and integrin-mechanistic studies by Pérez-Martínez & Jaworski (2005) and Herrera-Molina *et al.* (2012), this project identifies a cryptic, chemically promiscuous allosteric pocket in TIMP2 and demonstrates that it accommodates both halogenated and non-halogenated scaffolds with high CNS drug-likeness.
