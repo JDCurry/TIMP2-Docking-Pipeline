@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the following preprint."
+title: "Large-Scale Virtual Screening Identifies Novel Allosteric Modulators of TIMP2"
+authors:
+  - family-names: Curry
+    given-names: Joshua D.
+doi: "10.26434/chemrxiv-2025-rq1vl"
+date-released: 2025-11-13
+version: "1.0"
+url: "https://doi.org/10.26434/chemrxiv-2025-rq1vl"
