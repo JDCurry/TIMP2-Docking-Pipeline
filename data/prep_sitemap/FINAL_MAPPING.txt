@@ -1,15 +1,3 @@
-════════════════════════════════════════════════════════════════════════
-TIMP2 MANUSCRIPT - FINAL COMPLETE SITE MAPPING
-════════════════════════════════════════════════════════════════════════
-Date: November 13, 2025
-
-════════════════════════════════════════════════════════════════════════
-COMPLETE SITE MAPPING (VERIFIED)
-════════════════════════════════════════════════════════════════════════
-
-Your SiteMap Run → Your Docking Script → Used in Screening?
-─────────────────────────────────────────────────────────────────────────
-
 sitemap_1_site_1 → SITE1 (docking script) → ✓ YES (PRIMARY TARGET)
   • SiteScore: 0.915 (BEST)
   • Dscore: 0.912
@@ -38,61 +26,7 @@ sitemap_1_site_3 → NOT USED → ✗ NO
   • Completely separate location
   • Not pursued in current screening
 
-════════════════════════════════════════════════════════════════════════
-WHY THIS MAPPING MAKES SCIENTIFIC SENSE
-════════════════════════════════════════════════════════════════════════
 
-✓ You chose Site 1 (highest scoring) as primary target - CORRECT
-✓ You chose Site 2 (overlaps with Site 1) as secondary target - STRATEGIC
-  → Site 2 is spatially adjacent to Site 1
-  → Allows testing if compounds bind better to overlapping/adjacent region
-  → Site 3 was too far away (16 Å from Site 1)
 
-✓ You did NOT choose Site 3 even though it scored better than Site 2:
-  → Site 3 is geometrically isolated (far from the cryptic pocket)
-  → Site 2's proximity to Site 1 more valuable than slight score difference
-  → This demonstrates thoughtful site selection, not just following scores
-
-════════════════════════════════════════════════════════════════════════
-VERIFICATION SUMMARY
-════════════════════════════════════════════════════════════════════════
-
-Data Source                          Verification Method            Status
-─────────────────────────────────────────────────────────────────────────
-SiteMap scores & volumes             scores.csv from Maestro        ✓
-Site 1 center coordinates            Structures.maegz parsed        ✓
-Site 2 center coordinates            site2.xyz centroid calc        ✓
-Site 3 center coordinates            site3.xyz centroid calc        ✓
-Docking SITE1 coordinates            dock_adaptive.py line 24       ✓
-Docking SITE2 coordinates            dock_adaptive.py line 25       ✓
-Protein prep details                 Protein_Preparation_log.txt    ✓
-Docking parameters                   dock_adaptive.py lines 28-30   ✓
-
-ALL DATA CROSS-VERIFIED ✓
-
-════════════════════════════════════════════════════════════════════════
-WHAT WAS CORRECTED IN THE MANUSCRIPT
-════════════════════════════════════════════════════════════════════════
-
-MAJOR CORRECTIONS:
-─────────────────
-1. Number of sites: 5 → 3
-2. Site naming: "Site 4" → "Site 1" (correct SiteMap naming)
-3. Primary site score: 0.906 → 0.915
-4. Primary site Dscore: 1.037 → 0.912
-5. Primary site volume: 52 Ų → 226 Ų
-6. Added complete residue lists for all three sites
-7. Clarified which sites were used vs. not used
-8. Added rationale for site selection
-9. Exhaustiveness: 8 → 6
-10. Added adaptive CPU optimization details
-
-MINOR REFINEMENTS:
-─────────────────
-• Added protein prep pH (7.4)
-• Added Schrödinger version (2025-2)
-• Specified box dimensions more clearly
-• Explained Site 2 selection rationale
-• Noted Site 3 was identified but not pursued
 
 
