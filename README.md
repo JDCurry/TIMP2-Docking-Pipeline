@@ -47,7 +47,7 @@ This promotes downstream activation of the **cAMP/Rap1/ERK** pathway, leading to
 
 | Step | Script | Function |
 |------|---------|-----------|
-| 1️⃣ | `dock_adaptive_fixed.py` | Adaptive AutoDock Vina screening with CPU benchmarking. |
+| 1️⃣ | `dock_adaptive.py` | Adaptive AutoDock Vina screening with CPU benchmarking. |
 | 2️⃣ | `rebuild_hits.py` | Parses `.pdbqt` files to rebuild SMILES and docking scores. |
 | 3️⃣ | `timp2_triage.py` | Triage CNS/peripheral hits; energy and diversity filters. |
 | 4️⃣ | `timp2_analysis.py` | Integrates ADMET data, CNS MPO, and scaffold clustering. |
@@ -71,7 +71,7 @@ conda activate timp2-docking
 
 Example run:
 
-python scripts/dock_adaptive_fixed.py data/strict_0001.smi
+python scripts/dock_adaptive.py data/strict_0001.smi
 python scripts/rebuild_hits.py
 python scripts/timp2_triage.py --hits-csv work_strict/strict_0001_hits.csv --out triage_out/strict_0001
 python scripts/timp2_analysis.py triage_out/strict_0001/cns_hits.csv -o analysis_out/
