@@ -1,0 +1,1 @@
+The AlphaFold2-predicted structure of human TIMP2 (AlphaFold Protein Structure Database entry A4TIM2) was downloaded from EMBL-EBI and imported into PyMOL for structural comparison. The predicted model was aligned with the receptor structure used for docking to verify overall fold agreement and to assess whether the predicted binding cavity was preserved in the AlphaFold model.
