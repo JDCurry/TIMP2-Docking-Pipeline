@@ -2,7 +2,7 @@
 *A computational framework for identifying novel allosteric modulators of TIMP2 and exploring mechanisms of neuroplasticity.*
 
 ---
-[![Preprint](https://img.shields.io/badge/ChemRxiv-Preprint-blueviolet)](https://doi.org/10.26434/chemrxiv-2025-rq1vl-v4) 
+[![Preprint](https://img.shields.io/badge/ChemRxiv-Preprint-blueviolet)](https://doi.org/10.26434/chemrxiv-2025-rq1vl/v8) 
 [![DOI](https://zenodo.org/badge/1024692624.svg)](https://doi.org/10.5281/zenodo.17555741)
 
 ## Overview
