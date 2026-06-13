@@ -1,0 +1,2 @@
+1 molecule converted
+>> obabel /home/jd/Desktop/timp2/ensemble_receptors/aligned_pdb/receptor_frame00643.pdb -O /home/jd/Desktop/timp2/ensemble_receptors/receptor_pdbqt/receptor_frame00643.pdbqt -xr --partialcharge gasteiger

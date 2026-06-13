@@ -1,0 +1,11 @@
+
+1. python ensemble_select_receptors.py --md-pdb  timp2_apo_100ns/md_start.pdb --md-dcd  timp2_apo_100ns/md_production.dcd --ref-pdb timp2_apo_100ns/1br9_fixed.pdb --out-dir ensemble_receptors --n-clusters 6 --obabel obabel --save-ps 50 --min-frames 1900
+
+
+
+2. python dock_ensemble.py --receptor-dir ensemble_receptors/receptor_pdbqt --ligand-smi focused7_md7.smi --out-dir ensemble_docking --vina vina --obabel obabel --exhaustiveness 32 --num-modes 9 --seeds 1 2 3 4 5 --processes 16
+
+
+3. python analyze_ensemble.py --scores-csv ensemble_docking/ensemble_scores.csv --receptor-dir ensemble_receptors/receptor_pdbqt --out-dir ensemble_analysis --lead ZINC000583127796 --accept-threshold -6.0 --contact-cutoff 4.0
+
+

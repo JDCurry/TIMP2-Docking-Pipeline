@@ -1,0 +1,10 @@
+receptor_id,frame_index,triad_area_A2,kind
+receptor_crystal,-1,30.95,crystal_baseline
+receptor_frame00211,211,35.27,cluster5_n104
+receptor_frame00547,547,30.44,cluster2_n496
+receptor_frame00643,643,36.59,cluster3_n365
+receptor_frame01231,1231,34.62,cluster4_n683
+receptor_frame01358,1358,43.59,extreme_open
+receptor_frame01750,1750,32.07,cluster6_n315
+receptor_frame01991,1991,21.13,extreme_closed
+receptor_frame01995,1995,22.84,cluster1_n37

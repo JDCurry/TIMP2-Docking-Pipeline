@@ -1,0 +1,2 @@
+1 molecule converted
+>> obabel -:N#Cc1cccc(CC(=O)NC[C@@H]2CCOC3(CCC3)C2)c1 -O /home/jd/Desktop/timp2/ensemble_docking/ligand_pdbqt/ZINC000560333501.pdbqt --gen3d -h --partialcharge gasteiger --title ZINC000560333501
